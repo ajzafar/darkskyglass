@@ -1,0 +1,45 @@
+/**
+ * Color definitions.
+ *
+ * Each color defined in this file is usable as a symbolic color
+ * in all files included after it.
+ *
+ * Color definitions have the format `@define-color <name> <value>;',
+ * where <name> is a name you choose, and <value> is a color definition.
+ * Defined colors can be used in rules with the syntax `@<name>'
+ *
+ * The most common color definition is a html color code: #rrbbgg
+ * For more information see (1) or (2).
+ *
+ * (1) file:///usr/share/devhelp/books/gtk3/GtkCssProvider.html#gtkcssprovider-symbolic-colors
+ * (2) http://developer.gnome.org/gtk3/3.1/GtkCssProvider.html#gtkcssprovider-symbolic-colors
+ */
+
+/* Some common color definitions */
+
+@define-color base-color #1a1c20;
+@define-color fg-color #e8e6f8;
+@define-color bg-color #103755;
+@define-color text-color #98a0aa;
+
+@define-color fg-hover #01e7ff;
+@define-color fg-insensitive #777;
+@define-color fg-insensitive-shadow #fff;
+@define-color bg-insensitive #666;
+
+@define-color button-normal-stop1 #691435;
+@define-color button-normal-stop2 #530128;
+@define-color button-normal-stop3 #000000;
+
+@define-color progress-normal-stop1 #657284;
+@define-color progress-normal-stop2 #656279;
+@define-color progress-normal-stop3 #65041a;
+
+@define-color trough-stop1 #000000;
+@define-color trough-stop2 #23252a;
+@define-color trough-stop3 #2c2f34;
+
+@define-color toolbar-stop1 #547086;
+@define-color toolbar-stop2 #113856;
+@define-color toolbar-border-top #8a9dac;
+@define-color toolbar-border-bottom #122534;

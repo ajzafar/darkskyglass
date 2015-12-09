@@ -1,0 +1,341 @@
+/**
+ * Style classes.
+ *
+ * The style classes rules apply to any widget defining that class.
+ * For example, the .buttons class applies to all types of buttons,
+ * and allows you to theme all these types of buttons using a single
+ * set of rules.
+ *
+ * You can use all style properties defined for any of the class
+ * members in the class rules. These properties can be found in
+ * 'Template\Widgets\WidgetName.css'.
+ */
+
+* {
+    padding: 2px;
+    -GtkWidget-separator-height: 20px;
+    -GtkWidget-separator-width: 20px;
+    -GtkWidget-focus-line-width: 1px;
+    -GtkWidget-focus-padding: 1px;
+    -GtkButton-child-displacement-x: 1;
+    -GtkButton-child-displacement-y: 1;
+    outline-color: #4fa;
+    color: @fg-color;
+}
+
+.background {
+    background-image: url('background.png');
+}
+
+*:selected {
+    font-weight: bold;
+}
+
+*:insensitive {
+    color: @fg-insensitive;
+    text-shadow: 1px 1px 0.5px @fg-insensitive-shadow;
+    background-color: alpha(@bg-insensitive, 0.3);
+}
+
+/* normal button like things */
+.button, .menubar, GtkNotebook tab {
+    border: 1px outset darker(@button-normal-stop2);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-image: -gtk-gradient(linear, 0 0, 0 1,
+                                    color-stop(0.00, @button-normal-stop1),
+                                    color-stop(0.40, @button-normal-stop2),
+                                    color-stop(0.70, @button-normal-stop3));
+}
+
+.button:insensitive, .button.toggle:active, .button:selected {
+    background-image: -gtk-gradient(linear, 0 0, 0 1,
+                                    color-stop(0.00, @button-normal-stop1),
+                                    color-stop(0.40, @button-normal-stop2),
+                                    color-stop(0.70, #4e2a42));
+}
+
+*:inconsistent {
+    border: 1px solid yellow;
+}
+
+.menu {
+    background-image: none;
+    background-color: @bg-color;
+}
+
+/* GtkCheckButton:hover { */
+/*     background-image: none; */
+/* } */
+
+/* GtkCheckButton:active { */
+/*     background-image: none; */
+/*     background-color: #aaa; */
+/* } */
+
+:hover {
+    color: @fg-hover;
+}
+
+.menu .menuitem {
+    color: @fg-color;
+}
+
+.menu .menuitem:active,
+.menu .menuitem:hover {
+    color: @fg-color;
+}
+
+.button:active, .menuitem:hover, GtkNotebook tab:active {
+    /* color: @fg-hover; */
+    background-image: -gtk-gradient(linear, 0 0, 0 1,
+                                    color-stop(0.00, #9a2535),
+                                    color-stop(0.70, #8b2230));
+}
+
+GtkNotebook tab:active {
+    padding: 1px;
+}
+
+.slider {
+    border: 1px outset #380008;
+    background-image: -gtk-gradient(linear, 0 0, 0 1,
+                                    color-stop(0.00, @button-normal-stop1),
+                                    color-stop(0.40, @button-normal-stop2),
+                                    color-stop(0.70, #380008));
+}
+
+GtkSeparator {
+    color: #333;
+}
+
+.slider.vertical {
+    background-image: -gtk-gradient(linear, 0 0, 1 0,
+                                    color-stop(0.00, @button-normal-stop1),
+                                    color-stop(0.40, @button-normal-stop2),
+                                    color-stop(0.70, #380008));
+}
+
+.progressbar {
+    border: 0px outset black;
+    background-image: -gtk-gradient(linear, 0 0, 0 1,
+                                    color-stop(0.00, @progress-normal-stop1),
+                                    color-stop(0.40, @progress-normal-stop2),
+                                    color-stop(0.70, @progress-normal-stop3));
+    min-horizontal-bar-height: 10px;
+    min-horizontal-bar-width: 10px;
+}
+
+.progressbar.vertical {
+    border: 1px outset black;
+    background-image: -gtk-gradient(linear, 0 0, 1 0,
+                                    color-stop(0.00, @progress-normal-stop1),
+                                    color-stop(0.40, @progress-normal-stop2),
+                                    color-stop(0.70, @progress-normal-stop3));
+}
+
+.trough {
+    padding: 0px;
+    border: 1px inset darker(#0a2a4d);
+    background-image: -gtk-gradient(linear, 0 0, 0 1,
+                                    color-stop(1.00, darker(@trough-stop3)),
+                                    color-stop(0.60, darker(@trough-stop2)),
+                                    color-stop(0.30, darker(@trough-stop1)));
+}
+
+.trough.vertical {
+    background-image: -gtk-gradient(linear, 0 0, 1 0,
+                                    color-stop(1.00, @trough-stop3),
+                                    color-stop(0.60, @trough-stop2),
+                                    color-stop(0.30, @trough-stop1));
+}
+
+.menubar {
+    border-style: inset;
+    border-color: #222;
+    border-width: 2px;
+}
+
+.menu {
+    border: 2px #222 outset;
+}
+
+.menuitem:active {
+    color: yellow;
+}
+
+.toolbar {
+    border-top: 1px solid @toolbar-border-top;
+    border-bottom: 1px solid @toolbar-border-bottom;
+    background-image: -gtk-gradient(linear, 0 0, 0 1,
+                                    color-stop(0.00, @toolbar-stop1),
+                                    color-stop(1.00, @toolbar-stop2));
+}
+
+
+.entry, .cell, GtkTreeView row:nth-child(even) {
+    background-color: @base-color;
+    color: @text-color;
+}
+
+GtkTreeView row:nth-child(odd) {
+    background-color: lighter(@base-color);
+    color: @text-color;
+}
+
+.entry:insensitive, .cell:insensitive {
+    background-color: @bg-insensitive;
+}
+
+.entry:selected, .cell:selected {
+    background-color: #385670;
+}
+
+.entry:selected:focus, .cell:selected:focus {
+    color: #b8c0ca;
+    background-color: #4b6983;
+}
+
+/* Members: GtkAccelLabel. */
+.accelerator {
+}
+
+/* Members: GtkFrame. */
+.frame {
+}
+
+/* Members: GtkCellRendererToggle, GtkRadioMenuItem, GtkRadioButton. */
+.radio {
+}
+
+/* Members: GtkCalendar. */
+.calendar {
+}
+
+/* Members: GtkCheckMenuItem, GtkCellRendererToggle, GtkCheckButton. */
+.check {
+}
+
+/* Members: GtkMenuBar. */
+.menubar {
+}
+
+/* Members: GtkSpinner. */
+.spinner {
+}
+
+/* Members: GtkCheckMenuItem, GtkRadioMenuItem, GtkMenu, GtkMenuItem. */
+.menu {
+}
+
+/* Members: GtkTooltip. */
+.tooltip {
+}
+
+/* Members: GtkCellRendererToggle. */
+.cell {
+}
+
+/* Members: GtkViewport. */
+.viewport {
+}
+
+/* Members: GtkWindow. */
+.grip {
+}
+
+/* Members: GtkMenu. */
+.popup {
+}
+
+/* Members: GtkScrolledWindow. */
+.scrolled-window {
+}
+
+/* Members: GtkScale, GtkScrollbar. */
+.slider {
+}
+
+/* Members: GtkNotebook. */
+.notebook {
+}
+
+/* Members: GtkProgressBar, GtkScale, GtkScrollbar. */
+.trough {
+}
+
+/* Members: GtkWindow. */
+.background {
+}
+
+/* Members: GtkToolbar. */
+.toolbar {
+}
+
+/* Members: GtkHandleBox. */
+.dock {
+}
+
+/* Members: GtkCheckButton, GtkRadioButton, GtkButton, GtkToggleButton. */
+.button {
+}
+
+/* Members: GtkProgressBar, GtkCellRendererProgress. */
+.progressbar {
+}
+
+/* Members: GtkArrow. */
+.arrow {
+}
+
+/* Members: GtkMenuItem. */
+.menuitem {
+}
+
+/* Members: GtkEntry. */
+.entry {
+}
+
+/* Members: GtkExpander. */
+.expander {
+}
+
+
+/*
+ * Imports for widget-specific theming.
+ */
+
+@import url("widgets/gtkwindow.css");
+@import url("widgets/gtkswitch.css");
+@import url("widgets/gtkscrollbar.css");
+@import url("widgets/gtkcalendar.css");
+@import url("widgets/gtkcombobox.css");
+@import url("widgets/gtkwidget.css");
+@import url("widgets/gtknotebook.css");
+@import url("widgets/gtkmessagedialog.css");
+@import url("widgets/gtktreeview.css");
+@import url("widgets/gtkcheckmenuitem.css");
+@import url("widgets/gtkprogressbar.css");
+@import url("widgets/gtkscale.css");
+@import url("widgets/gtkbuttonbox.css");
+@import url("widgets/gtkinfobar.css");
+@import url("widgets/gtkscrolledwindow.css");
+@import url("widgets/gtkrange.css");
+@import url("widgets/gtkdialog.css");
+@import url("widgets/gtktoolbutton.css");
+@import url("widgets/gtkiconview.css");
+@import url("widgets/gtkmenu.css");
+@import url("widgets/gtkmenuitem.css");
+@import url("widgets/gtkspinbutton.css");
+@import url("widgets/gtktoolbar.css");
+@import url("widgets/gtkcheckbutton.css");
+@import url("widgets/gtkpaned.css");
+@import url("widgets/gtktoolitemgroup.css");
+@import url("widgets/gtkarrow.css");
+@import url("widgets/gtkassistant.css");
+@import url("widgets/gtktextview.css");
+@import url("widgets/gtkexpander.css");
+@import url("widgets/gtkmenubar.css");
+@import url("widgets/gtkentry.css");
+@import url("widgets/gtkbutton.css");
+@import url("widgets/gtkstatusbar.css");
